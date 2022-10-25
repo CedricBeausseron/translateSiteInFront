@@ -1,0 +1,35 @@
+:root{
+    /* --baseLang:"fr"; */
+}
+/* [ lang ]:not([ lang="fr" ]) {
+    display:none;
+} */
+[ lang ], [ name="selectLang" ], #changeLang {
+    display: none;
+}
+[ name="selectLang" ] + label {
+    visibility: hidden;
+}
+#changeLang + label {
+    margin-left:8px;
+}
+#changeLang:checked ~ [ name="selectLang" ] + label {
+    visibility: visible;
+}
+[ name="selectLang" ] + label,
+#changeLang + label {
+    margin-top:8px;
+}
+[ name="selectLang" ]:checked + label {
+    text-decoration: underline;
+}
+
+input[ value="fr" ]:checked ~ [ lang="fr" ],
+input[ value="fr" ]:checked ~ * [ lang="fr" ] {
+  display:block;
+}
+
+input[ value="en" ]:checked ~ [ lang="en" ],
+input[ value="en" ]:checked ~ * [ lang="en" ] {
+  display:block;
+}
