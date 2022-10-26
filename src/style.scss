@@ -4,7 +4,28 @@
 /* [ lang ]:not([ lang="fr" ]) {
     display:none;
 } */
-[ lang ], [ name="selectLang" ], #changeLang {
+/* body[ data-js-disabled="true" ]  */
+body[ data-js-disabled="true" ] {
+    
+    > input[ value="fr" ]:checked {
+        ~ [ lang="fr" ],
+        ~ * [ lang="fr" ] {
+            display:block;
+        }
+    }
+    
+    > input[ value="en" ]:checked {
+        ~ [ lang="en" ] ,
+        ~ * [ lang="en" ] {
+            display:block;
+        }
+    }
+}
+[ lang ], 
+[ name="selectLang" ] {
+    display: none;
+}
+#changeLang {
     display: none;
 }
 [ name="selectLang" ] + label {
@@ -22,14 +43,4 @@
 }
 [ name="selectLang" ]:checked + label {
     text-decoration: underline;
-}
-
-input[ value="fr" ]:checked ~ [ lang="fr" ],
-input[ value="fr" ]:checked ~ * [ lang="fr" ] {
-  display:block;
-}
-
-input[ value="en" ]:checked ~ [ lang="en" ],
-input[ value="en" ]:checked ~ * [ lang="en" ] {
-  display:block;
 }
