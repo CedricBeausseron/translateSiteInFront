@@ -1,46 +1,60 @@
 :root{
-    /* --baseLang:"fr"; */
+    --color1:#fff;
+    --color2:purple;
 }
-/* [ lang ]:not([ lang="fr" ]) {
-    display:none;
-} */
-/* body[ data-js-disabled="true" ]  */
-body[ data-js-disabled="true" ] {
-    
-    > input[ value="fr" ]:checked {
-        ~ [ lang="fr" ],
-        ~ * [ lang="fr" ] {
-            display:block;
-        }
-    }
-    
-    > input[ value="en" ]:checked {
-        ~ [ lang="en" ] ,
-        ~ * [ lang="en" ] {
-            display:block;
-        }
-    }
-}
-[ lang ], 
-[ name="selectLang" ] {
+
+// A Styles
+// A - 1 - Languages
+[ lang ] {
     display: none;
 }
-#changeLang {
+body[ data-lang ] {
+    > input,
+    > label {
+        display: none;
+    }
+}
+body[ data-lang = "fr" ] {
+    // background-color: red;    
+    [ lang = "fr" ] {
+        display: block;
+    }
+}
+
+// B Javascript disabled elements
+// B - 1 - Languages
+#changeLang,
+#changeLang + label,
+input[ name = "selectLang" ],
+[ name = "selectLang" ] + label {
     display: none;
 }
-[ name="selectLang" ] + label {
-    visibility: hidden;
-}
-#changeLang + label {
-    margin-left:8px;
-}
-#changeLang:checked ~ [ name="selectLang" ] + label {
-    visibility: visible;
-}
-[ name="selectLang" ] + label,
-#changeLang + label {
-    margin-top:8px;
-}
-[ name="selectLang" ]:checked + label {
-    text-decoration: underline;
+
+body[ data-js-disabled ] {
+    [ name = "selectLang" ] + label {
+        display:block;
+        visibility: hidden;
+    }
+    #changeLang {
+        + label {
+            display: block;
+        }
+        &:checked {
+            ~ [ name = "selectLang" ] + label {
+                visibility: visible;
+            }
+        } 
+    } 
+    input[ value = "fr" ]:checked {
+        ~ [ lang = "fr" ],
+        ~ * [ lang = "fr" ] {
+            display: block;
+        }
+    }
+    input[ value = "en" ]:checked {
+        ~ [ lang = "en" ] ,
+        ~ * [ lang = "en" ] {
+            display: block;
+        }
+    }
 }

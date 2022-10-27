@@ -8,22 +8,42 @@
         <link rel="stylesheet" href="assets/css/style.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer">
     </head>
-    <body data-js-disabled="true">
-        <input type="checkbox" id="changeLang">
-        <label for="changeLang" class="btn btn-dark"><i class="fa fa-language" aria-hidden="true"></i></label>
-        <input type="radio" id="frLang" name="selectLang" value="fr" checked>
-        <label for="frLang" class="btn">Français</label>
-        <input type="radio" id="enLang" name="selectLang" value="en">
-        <label for="enLang" class="btn">English</label>
-        
-        <div class="container">
-            <h1 class="text-center mt-3 mb-5">
-                <span lang="fr">Mon site</span>
-                <span lang="en">My site</span>
-            </h1>
-            <button class="btn btn-dark">test button</button>
-            <p lang="fr">FR block</p>
-            <p lang="en">EN block</p>
+    <body data-js-disabled class="">
+        <div class="row m-0 align-items-center">
+            <input type="checkbox" id="changeLang">
+            <label for="changeLang" class="btn btn-dark col-auto"><i class="fa fa-language" aria-hidden="true"></i></label>
+            <input type="radio" id="frLang" name="selectLang" value="fr" checked>
+            <label for="frLang" class="btn col-auto">Français</label>
+            <input type="radio" id="enLang" name="selectLang" value="en">
+            <label for="enLang" class="btn col-auto">English</label>
+
+            <nav class="col-12">
+                <div class="row justify-content-center text-center py-2">
+                    <a class="col-auto btn btn-link">menu-1</a>
+                    <a class="col-auto btn btn-link">menu-2</a>
+                    <a class="col-auto btn btn-link">menu-3</a>
+                </div>
+            </nav>
+            <div class="col-12">
+                <div class="container">
+                    <h1 class="text-center mb-5">
+                        <span lang="fr">Mon site</span>
+                        <span lang="en">My site</span>
+                    </h1>
+                    <button class="btn btn-dark">test button</button>
+                    <p lang="fr">FR block</p>
+                    <p lang="en">EN block</p>
+    
+                    <div class="row">
+                        <input type="text" id="aaa" class="d-none">
+                        <label for="aaa" class="col-auto">aaa</label>
+                        <input type="text" id="bbb" class="d-none">
+                        <label for="bbb" class="col-auto">bbb</label>
+                        <input type="text" id="aaa" class="d-none">
+                        <label for="ccc" class="col-auto">ccc</label>
+                    </div>
+                </div>
+            </div>
         </div>
 
 
